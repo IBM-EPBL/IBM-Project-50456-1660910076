@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    <table>
+  <caption>Requests</caption>
+  <thead>
+    <tr>
+      <th scope="col">Username</th>
+      <th scope="col">Name</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">City</th>
+      <th scope="col">Email</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for row in value.values() %}
+  <form action="{{ url_for('sendEmail')}}" method="POST">
+    <tr>
+      <td data-label="Username"><input type="hidden" name="Username" id = "Username" value = "{{ row['USERNAME'] }}">{{ row['USERNAME'] }}</td>
+      <td data-label="name"><input type="hidden" name="Name" id = "Name" value = "{{ row['NAME'] }}">{{ row['NAME'] }}</td>
+      <td data-label="Phone Number"><input type="hidden" name="Phone" id = "Phone" value = "{{ row['PHONE'] }}">{{ row['PHONE'] }}</td>
+      <td data-label="City"><input type="hidden" name="City" id = "City" value = "{{ row['CITY'] }}">{{ row['CITY'] }}</td>
+      <td data-label="Email"><input type="hidden" name="Email" id = "Email" value = "{{ row['EMAIL'] }}">{{ row['EMAIL'] }}</td>
+      <td></td>
+      <td data-label="Request"><button class="accept" type="submit" value="select" name="select">Accept</button></td>
+      <td data-label="Request"><button class="request" type="submit" value="select" name="select">Reject</button></td>
+    </tr>
+  </form>
+  {% endfor %}
+  </tbody>
+</table>
+
+    {% endblock %}
+  </body>
+</html>
