@@ -153,7 +153,7 @@ def requestBloodPlasma():
         html_content='<h1>Need Of Blood</h1><table><tr><th>Name</th><th>' + name + '</th></tr><tr><th>Age</th><th>' + age + '</th></tr><tr><th>Sex</th><th>' + sex + '</th></tr><tr><th>Blood Group</th><th>' + blood_type + '</th></tr><tr><th>Phone Number</th><th>' + phone_number + '</th></tr></table>'
     )
     try:
-        sg = SendGridAPIClient("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")
+        sg = SendGridAPIClient(os.environ.get("SENDGRID_API_KEY"))
         response = sg.send(message=message)
         print(response.status_code)
         print(response.body)
