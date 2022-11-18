@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link href="../static/signup.css" rel="stylesheet" />
+    <link href="../static/login.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    h3 {
+      margin: 5px;
+      font-family: "Lato", sans-serif;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      background-color: #0099ff;
+      justify-content: center;
+      font-family: "Lato", sans-serif;
+      min-height: 100vh;
+    }
+    .root {
+      width: 25%;
+      border-radius: 12px;
+      background-color: #fcaaaa;
+      box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+        0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    }
+    .right,
+    .left {
+      position: relative;
+    }
+    .left {
+      height: 400px;
+      background-color: white;
+    }
+
+    .registration {
+      position: relative;
+      border-radius: 12px 0 0 12px;
+      padding: 5px 25px;
+
+      overflow: hidden;
+    }
+
+    h1 {
+      margin: 32px 0;
+      font-weight: normal;
+      text-align: center;
+    }
+
+    .registration > label {
+      display: block;
+      margin: 24px 0;
+      width: 280px;
+    }
+
+    a {
+      color: rgb(var(--pure-material-primary-rgb));
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button {
+      display: block !important;
+      margin: 32px auto;
+    }
+
+    input {
+      background-color: #eee;
+      border: none;
+      margin: 2px;
+      padding: 12px 15px;
+      margin: auto;
+      width: 380px;
+    }
+    select,
+    .t5 {
+      background-color: #eee;
+      border: none;
+      margin: 2px;
+      padding: 12px 15px;
+      margin: 8px 0;
+      width: 25%;
+    }
+    .lin {
+      margin-left: 160px;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 200px;
+      border: 1px solid #fe725d;
+      padding: 12px 15px;
+    }
+    .btn:hover {
+      background-color: #fe725d;
+      border: 1px solid #ff5353;
+      color: white;
+    }
+
+    .right {
+      position: relative;
+    }
+    h1 {
+      color: #eee;
+    }
+    h3 {
+      color: #ff5353;
+    }
+    .btn-sv {
+      background-color: #ff5353;
+      color: #fff;
+      width: 40%;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+    img {
+      width: 400px;
+      height: 400px;
+    }
+    .image {
+      position: relative;
+    }
+  </style>
+  <body>
+    <div class="root">
+      <div class="left">
+        <form
+          class="registration"
+          method="post"
+          action="http://127.0.0.1:5000/login"
+        >
+          <h1 style="color: rgb(236, 103, 103)">Login</h1>
+
+          <label class="pure-material-textfield-outlined">
+            <input
+              name="username"
+              placeholder="User Name"
+              type="text"
+              required
+            />
+          </label>
+
+          <label class="pure-material-textfield-outlined">
+            <input
+              name="password"
+              placeholder="Password"
+              type="password"
+              required
+            />
+          </label>
+
+          <button class="btn-sv" type="submit">Login</button>
+
+          <a class="lin" href="/signup">Or Sign up here!</a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

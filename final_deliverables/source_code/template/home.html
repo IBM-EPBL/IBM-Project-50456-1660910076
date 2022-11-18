@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Plasma Donor Application</title>
+  </head>
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      margin-top: -20px;
+    }
+
+    .nav > a {
+      font-size: 22px;
+      margin-right: 15px;
+      text-decoration: none;
+    }
+
+    img {
+      height: 400px;
+      padding-right: 100px;
+    }
+
+    .primary {
+      font-size: 64px;
+    }
+    .text {
+      padding-left: 30px;
+    }
+    .secondary {
+      font-size: 30px;
+      margin-top: -20px;
+    }
+
+    .btn {
+      background-color: #0099ff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 40px;
+      margin-left: 20px;
+    }
+  </style>
+  <body>
+    <nav class="nav">
+      <p class="logo">TheDonars</p>
+      <a href="#" style="margin-left: auto">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Log in</a>
+      <a href="#">Register</a>
+    </nav>
+    <main>
+      <div class="container">
+        <div class="text">
+          <h1 class="primary">Donate Plasma</h1>
+          <p class="secondary">Save a Life!</p>
+          <button class="btn">Donate Now!</button>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1536856136534-bb679c52a9aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+        />
+      </div>
+    </main>
+  </body>
+  <script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "c8a1e508-93f2-4db4-9423-844c3ebf9bf4", // The ID of this integration.
+      region: "au-syd", // The region your integration is hosted in.
+      serviceInstanceID: "efa15d26-0e82-4d4e-a346-85bdb54561ba",
+      onLoad: function (instance) {
+        instance.render();
+      },
+    };
+    setTimeout(function () {
+      const t = document.createElement("script");
+      t.src =
+        "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+        (window.watsonAssistantChatOptions.clientVersion || "latest") +
+        "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+</html>
